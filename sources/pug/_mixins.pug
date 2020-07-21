@@ -1,0 +1,138 @@
+//- Image
+	@param {string} name
+mixin img( name, options )
+	-
+		var size = getImageSize( name );
+		if( options && options.retina ) { size[0] = ~~(size[0]/2); size[1] = ~~(size[1]/2); }
+	img( src= procImg( name ), alt='', width= size[0], height= size[1] )&attributes( attributes )
+
+
+//- Loop without indexing mixin
+	@param {number} iterations - number of iterations
+mixin loop( iterations )
+	- for ( var i = 0; i < iterations; i++ )
+		block
+
+
+//- Parallax Section
+	@param {object} obj - parameters storage
+	@param {string} obj.img - image path
+	@param {string} obj.innerClass - content wrapper class
+mixin parallax( obj )
+	section.section.parallax-container( data-parallax-img= procImg( obj.img ) )&attributes( attributes )
+		.parallax-content( class= obj.innerClass )
+			block
+
+//- Parallax Block
+	@param {object} obj - parameters storage
+	@param {string} obj.img - image path
+	@param {string} obj.innerClass - content wrapper class
+mixin parallax-block( obj )
+	.parallax-container( data-parallax-img= procImg( obj.img ) )&attributes( attributes )
+		.parallax-content( class= obj.innerClass )
+			block
+
+
+//- Breadcrumbs
+	@param {Array}  [path] - other navigation path
+	@example +breadcrumbs([ { title:'About Us', link:'about-us.html' }, { title:'Team member' } ])
+mixin breadcrumbs( obj, path )
+	-
+		obj = obj || {}
+		if ( !path ) {
+			if ( breadcrumbs && breadcrumbs.length ) path = breadcrumbs;
+			else path = [{ title: pageName }];
+		}
+
+	// Breadcrumbs
+	//section.breadcrumbs-custom.bg-image.context-dark( style='background-image: url(images/breadcrumbs-image-1.jpg)' || 'images/' + obj.img + '.jpg' )
+	section.breadcrumbs-custom.bg-image.context-dark( style=obj.img ? 'background-image: url(images/' + obj.img + '.jpg);' : 'background-image: url(images/breadcrumbs-image-1.jpg);' )
+		.breadcrumbs-custom-inner
+			.breadcrumbs-custom-container.container
+				.breadcrumbs-custom-main
+					h6.breadcrumbs-custom-subtitle.title-decorated= obj.subtitle ? obj.subtitle : path[ path.length - 1 ].title
+					h2.breadcrumbs-custom-title= path[ path.length - 1 ].title
+				if ( path[0].title.toLowerCase() !== 'home' )
+					ul.breadcrumbs-custom-path
+						li: a( href= links.index ) Home
+						- for ( var i = 0; i < path.length; i++ )
+							if ( i === path.length - 1 )
+								li.active= path[i].title
+							else
+								li: a( href= path[i].link )= path[i].title
+
+
+//- Main Navigation
+mixin navigation( menu, type )
+	if( !type )
+		ul.rd-navbar-nav&attributes( attributes )
+			each item in menu
+				li.rd-nav-item( class= { active: item.active } )
+					a.rd-nav-link( href= item.link )= item.title
+					if( item.dropdown )
+						+navigation( item.dropdown, 'dropdown' )
+					if( item.megamenu )
+						+navigation( item.megamenu, 'megamenu' )
+
+	else if( type === 'dropdown' )
+		ul.rd-menu.rd-navbar-dropdown
+			each item in menu
+				li.rd-dropdown-item( class= { active: item.active } )
+					a.rd-dropdown-link( href= item.link )= item.title
+					if( item.dropdown )
+						+navigation( item.dropdown, 'dropdown' )
+
+	else if( type === 'megamenu' )
+		ul.rd-menu.rd-navbar-megamenu
+			each item in menu
+				li.rd-megamenu-item
+					if ( item instanceof Array )
+						+navigation( item, 'column' )
+					else if( item.banner )
+						.banner( style='background-image: url(images/' + item.banner.image + '.jpg);' )
+							!= item.banner.button
+					else
+						+navigation( item, 'block' )
+
+	else if( type === 'column' )
+		each item in menu
+			+navigation( item, 'block' )
+
+	else if( type === 'block' )
+		if ( menu.title && menu.link )
+			h6.rd-megamenu-title: a( href= menu.link )= menu.title
+		else if ( menu.title)
+			h6.rd-megamenu-title= menu.title
+		if ( menu.list)
+			+navigation( menu.list, 'list' )
+
+	else if( type === 'list' )
+		ul.rd-megamenu-list
+			each item in menu
+				li.rd-megamenu-list-item
+					a.rd-megamenu-list-link( href= item.link )= item.title
+
+
+//- Logo
+mixin logo
+	//Brand
+	a.brand( href= links.index )&attributes( attributes )
+		+img( logo.default, { retina: true } ).brand-logo-dark
+		+img( logo.inverse, { retina: true } ).brand-logo-light
+
+
+//- Copyright
+mixin rights
+	// Rights
+	p.rights&attributes( attributes )
+		span &copy;&nbsp;
+		span.copyright-year
+		span &nbsp;
+		span All Rights Reserved.
+		span &nbsp;
+
+
+
+mixin quote-mark
+	svg( x='0px', y='0px', width='35px', height='25px', viewbox='0 0 35 25' )&attributes( attributes )
+		path( d='M27.461,10.206h7.5v15h-15v-15L25,0.127h7.5L27.461,10.206z M7.539,10.206h7.5v15h-15v-15L4.961,0.127h7.5                L7.539,10.206z' )

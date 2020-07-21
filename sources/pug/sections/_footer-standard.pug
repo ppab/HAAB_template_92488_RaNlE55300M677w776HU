@@ -1,0 +1,44 @@
+mixin footer-standard( obj )
+	- obj = obj || {}
+	footer.section.footer-standard.bg-deep__blue
+		.footer-standard-main
+			.container
+				.row.row-50
+					.col-lg-4: .inset-right-1
+						h4 About Us
+						p= obj.about ? obj.about : 'ArtPlace is America’s leading engraving studio with over 20 professionals who know how to handle almost any material. Whether you need a dog tag, an engraved portrait, or a custom-designed product, our team will be more than happy to handle your requests.'
+
+
+					.col-sm-6.col-md-5.col-lg-4: .box-1
+						h4 Contact Information
+						ul.list-sm
+							li.object-inline
+								span.icon.icon-md.mdi.mdi-map-marker.text-white
+								a.footer-link( href='#' ) 2130 Fulton Street #[br] San Diego, CA 94117-1080 USA
+	
+							li.object-inline
+								span.icon.icon-md.mdi.mdi-phone.text-white
+								a.footer-link( href='tel:#' ) 1-800-1234-678
+	
+							li.object-inline
+								span.icon.icon-md.mdi.mdi-email-outline.text-white
+								a.footer-link( href='mailto:#' ) info@demolink.org
+	
+					.col-sm-6.col-md-7.col-lg-4
+						h4 Newsletter
+						p Sign up to our newsletter and be the first to know about the latest news, special offers, events, and discounts.
+						// RD Mailform
+						form.rd-form.rd-mailform.form-inline( data-form-output='form-output-global', data-form-type='subscribe', method='post', action='bat/rd-mailform.php' )
+							.form-wrap
+								input.form-input( id='subscribe-form-4-email', type='email', name='email', data-constraints='@Required @Email' )
+								label.form-label( for='subscribe-form-4-email' ) E-mail
+							.form-button
+								button.button.button-primary.button-icon.button-icon-only.button-winona( type='submit', aria-label='submit' )
+									span.icon.mdi.mdi-email-outline
+	
+	
+		.container
+			.footer-standard-aside
+				a.brand( href= links.index )
+					+img( logo.light, { retina: true } )
+				+rights

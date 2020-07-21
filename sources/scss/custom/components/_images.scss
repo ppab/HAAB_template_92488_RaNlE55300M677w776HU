@@ -1,0 +1,25 @@
+/*
+*
+* Images
+*/
+
+// Standard img style
+img {
+	display: inline-block;
+	max-width: 100%;
+	height: auto;
+}
+
+.img-responsive {
+	width: 100%;
+}
+.respo-center{
+	// Extra large <1200px
+	@include media-breakpoint-down(lg) {
+		img{
+			display: block;
+			margin-left: auto;
+			margin-right: auto;
+		}
+	}
+}

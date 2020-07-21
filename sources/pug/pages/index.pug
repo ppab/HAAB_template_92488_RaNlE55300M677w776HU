@@ -1,0 +1,307 @@
+extends  ../_skeleton
+
+//- Includes
+include ../components/_thumbnail-corporate
+include ../components/_card
+
+block variables
+	- pageName = 'ArtPlace'
+
+block page
+	// Page Header
+	include ../sections/_header-minimal
+
+
+	// Intro Screen
+	section.section.bg-image-2.section-1.section-md#home
+		.container
+			.row.flex-xl-row.flex-column-reverse.row-50.justify-content-center.align-items-center
+				.col-xl-7.col-md-12.col-sm-10.col-lg-10
+					.respo-center
+						+img('home-2-599x599.png')
+
+				.col-xl-5.col-lg-8
+					.intro
+						.intro__pre-title quality guarantee
+						h2 Engraving
+						.intro__subtitle wood & metal
+						.col-md-11.text-16.intro__text
+							p Founded in 1999, ArtPlace is a family-owned yet widely known engraving studio offering all kinds of engraved gifts and products of the highest quality.
+							a(href="#").button.button-primary-outline.button-lg Learn More
+
+	//Why Choose Us
+	section.section-2.section-md.bg-default
+		.container
+			h2.text-center.decor.decor__centered What We Do
+			.row.row-30.row-offset-1
+				.col-sm-6.col-lg-4.wow-outer
+					// Box Creative
+					article.box-creative.wow.slideInDown
+						.box-creative-icon.linearicons-highlight
+						h4.box-creative-title: a( href= '#' ) Wood Engraving
+						p At Graver, your wood engraving experience is our number one priority. We have laser engraved wood art for every occasion. If you can dream it, we can design it!
+
+				.col-sm-6.col-lg-4.wow-outer
+					// Box Creative
+					article.box-creative.wow.slideInDown( data-wow-delay='.05s' )
+						.box-creative-icon.linearicons-flare
+						h4.box-creative-title: a( href= '#' ) Metal Engraving
+						p We can laser engrave a range of metals, most of which we have in stock and some are special order. If you can’t find the specific material you require, let us know!
+
+				.col-sm-6.col-lg-4.wow-outer
+					// Box Creative
+					article.box-creative.wow.slideInDown( data-wow-delay='.1s' )
+						.box-creative-icon.linearicons-pen3
+						h4.box-creative-title: a( href= '#' ) Design Services
+						p If you’d like to have a custom image or text engraved, our team of designers and engravers will be glad to help you! Feel free to contact us to discuss your idea in details.
+	//Gallery
+
+	section.section.bg-default.section-sm#gallery
+		.container.isotope-wrap.text-center.text-md-left
+			// Isotope Filters
+			.isotope.isotope-responsive.row( data-lightgallery='group' )
+				.col-sm-6.col-lg-4.isotope-item( data-filter='Type 2' )
+					+thumbnail-corporate({
+						img: 'gallery-masonry-1-370x256',
+						original: 'images/gallery-masonry-1-original.jpg',
+						title: 'Perfect Gifts',
+						subtitle: 'Design Services'
+					}).thumbnail-corporate-light( data-lightgallery='item' )
+
+				.col-sm-6.col-lg-4.isotope-item( data-filter='Type 1' )
+					+thumbnail-corporate({
+						img: 'gallery-masonry-2-370x464',
+						original: 'images/gallery-masonry-2-original.jpg',
+						title: 'Golden Age Watches',
+						subtitle: 'Metal Engraving'
+					}).thumbnail-corporate-light.thumbnail-corporate-lg( data-lightgallery='item' )
+
+				.col-sm-6.col-lg-4.isotope-item( data-filter='Type 2' )
+					+thumbnail-corporate({
+						img: 'gallery-masonry-3-370x256',
+						original: 'images/gallery-masonry-3-original.jpg',
+						title: 'Epoque',
+						subtitle: 'Metal Engraving'
+					}).thumbnail-corporate-light( data-lightgallery='item' )
+
+				.col-sm-6.col-lg-4.isotope-item( data-filter='Type 1' )
+					+thumbnail-corporate({
+						img: 'gallery-masonry-4-370x464',
+						original: 'images/gallery-masonry-4-original.jpg',
+						title: 'Ultra Jewels',
+						subtitle: 'Wood Engraving'
+					}).thumbnail-corporate-light.thumbnail-corporate-lg( data-lightgallery='item' )
+
+				.col-sm-6.col-lg-4.isotope-item( data-filter='Type 1' )
+					+thumbnail-corporate({
+						img: 'gallery-masonry-6-370x464',
+						original: 'images/gallery-masonry-6-original.jpg',
+						title: 'Furni',
+						subtitle: 'Wood Engraving'
+					}).thumbnail-corporate-light.thumbnail-corporate-lg( data-lightgallery='item' )
+
+				.col-sm-6.col-lg-4.isotope-item( data-filter='Type 2' )
+					+thumbnail-corporate({
+						img: 'gallery-masonry-5-370x256',
+						original: 'images/gallery-masonry-5-original.jpg',
+						title: 'Accessories',
+						subtitle: 'Design Services'
+					}).thumbnail-corporate-light( data-lightgallery='item' )
+
+
+	//Box minimal
+	section.section-3.section-md
+		.container
+			h2.text-center.decor.decor__centered Why Choose Us
+			.row.row-30.row-offset-1
+				.col-sm-6.col-lg-4.wow-outer
+					// Box Minimal
+					article.box-minimal
+						.box-minimal-icon.linearicons-user.wow.fadeIn
+						.box-minimal-main.wow-outer
+							h4.box-minimal-title.wow.slideInDown Qualified Engravers
+							p.wow.fadeInUpSmall You can depend on our qualified engravers who have over 20 years of combined experience.
+
+				.col-sm-6.col-lg-4.wow-outer
+					// Box Minimal
+					article.box-minimal
+						.box-minimal-icon.linearicons-bubble-text.wow.fadeIn( data-wow-delay='.1s' )
+						.box-minimal-main.wow-outer
+							h4.box-minimal-title.wow.slideInDown( data-wow-delay='.1s' ) Modern Equipment
+							p.wow.fadeInUpSmall( data-wow-delay='.1s' ) Our team uses top-notch laser engraving equipment to produce the best results for our clients.
+
+				.col-sm-6.col-lg-4.wow-outer
+					// Box Minimal
+					article.box-minimal
+						.box-minimal-icon.linearicons-shield-check.wow.fadeIn( data-wow-delay='.2s' )
+						.box-minimal-main.wow-outer
+							h4.box-minimal-title.wow.slideInDown( data-wow-delay='.2s' ) 100% Result Guarantee
+							p.wow.fadeInUpSmall( data-wow-delay='.2s' ) All results that you get from us are 100% guaranteed to satisfy your wishes of having a quality engraved present.
+
+
+	//Cta
+	include ../sections/_section-wide-cta
+
+	// Our Team
+	section.section.section-4.section-lg.section-last.text-center#team
+		.container
+			h2.text-center.decor.decor__centered Team
+			.row.row-50.row-offset-1
+				.col-sm-6.col-lg-4.wow-outer
+					// Profile Minimal
+					article.profile-minimal.wow.slideInLeft
+						+img( 'team-1-370x368' ).profile-minimal-image
+						.profile-minimal-caption
+							h4.profile-minimal-title Jean Thompson
+							p.profile-minimal-position Engraver
+
+				.col-sm-6.col-lg-4.wow-outer
+					// Profile Minimal
+					article.profile-minimal.wow.slideInLeft( data-wow-delay='.05s' )
+						+img( 'team-2-370x368' ).profile-minimal-image
+						.profile-minimal-caption
+							h4.profile-minimal-title John Doe
+							p.profile-minimal-position Certified Engraver, Founder
+
+				.col-sm-6.col-lg-4.wow-outer
+					// Profile Minimal
+					article.profile-minimal.wow.slideInLeft( data-wow-delay='.1s' )
+						+img( 'team-3-370x368' ).profile-minimal-image
+						.profile-minimal-caption
+							h4.profile-minimal-title Nathan Porter
+							p.profile-minimal-position Wood Engraver
+
+			.wow-outer.button-outer
+				a.button.button-primary-outline.button-md.wow.slideInUp( href='#' ) View all Team
+
+
+	//Clients
+	section.section.section-5.section-lg.bg-gray-100.text-center#testimonials
+		.container
+			h2.text-center.decor.decor__centered What Clients Say
+			include ../includes/_slick-widget-testimonials
+
+	// Testimonials
+	section.section.section-lg.bg-img-3
+		.container
+			.row.row-50.row-offset-1.justify-content-lg-between.offset-top-1
+				.col-lg-7.col-xl-6.text-center.text-lg-left
+					h2.d-inline-block.decor.decor__right FAQ
+					// Bootstrap collapse
+					#accordion1.card-group-custom.card-group-corporate.wow-outer( role='tablist', aria-multiselectable='false' )
+						+card({
+							show: true,
+							parentId: 'accordion1',
+							title: 'What are the advantages of purchasing a template?'
+						}).card-corporate.wow.fadeInDown( data-wow-delay='.05s' )
+							p The major advantage is price: You get a high quality design for just $20-$70. You don’t have to hire a web designer or web design studio. Second advantage is time frame: It usually takes 5-15 days for a good designer to produce a web page of such quality.
+
+						+card({
+							parentId: 'accordion1',
+							title: 'Do you provide any scripts with your templates?'
+						}).card-corporate.wow.fadeInDown( data-wow-delay='.1s' )
+							p Our templates do not include any additional scripts. Newsletter subscriptions, search fields, forums, image galleries (in HTML versions of Flash products) are inactive. Basic scripts can be easily added at www.zemez.io If you are not sure that the element you’re interested in is active please contact our Support Chat for clarification.
+
+						+card({
+							parentId: 'accordion1',
+							title: 'What do I receive when I order a template from you?'
+						}).card-corporate.wow.fadeInDown( data-wow-delay='.15s' )
+							p After you complete the payment via our secure form you will receive the instructions for downloading the product. The source files in the download package can vary based on the type of the product you have purchased.
+
+						+card({
+							parentId: 'accordion1',
+							title: 'What is a unique/non-unique purchase?'
+						}).card-corporate.wow.fadeInDown( data-wow-delay='.2s' )
+							p Website templates are available in Photoshop and HTML formats. Fonts are included with the Photoshop file. In most templates, HTML is compatible with Adobe® Dreamweaver® and Microsoft® FrontPage®.
+
+				.col-lg-5
+					.box-img-2
+						.box-img__overlay-right
+						.box-img__media
+							+img('home-2-455x513.jpg')
+
+
+
+	//Cta
+	section.section.section-xs.text-center.bg-gray-100
+		.container
+			.box-cta-1
+				h3.wow-outer: span.font-weight-bold.wow.slideInRight Have an #[span.text-italic.font-weight-regular Idea] for our Engravers?
+				.wow-outer.button-outer
+					a.button.button-primary-outline.button-md-2.wow.slideInLeft( href='#contact-us',data-waypoint-to='#contact-us' ) Get in touch
+
+	// Latest Blog Posts
+	section.section.section-lg.text-center
+		.container
+			h2.text-center.decor.decor__centered Blog
+			.row.row-50.row-offset-1
+				.col-sm-6.col-lg-4.wow-outer
+					// Post Classic
+					article.post-classic.wow.slideInLeft
+						a.post-classic-media( href= "#" )
+							+img( 'sidebar-blog-1-370x264' )
+						ul.post-classic-meta
+							li: a.button-winona( href='#' ) News
+							li: time( datetime='2019' ) Apr 21, 2019 at 12:05 pm
+
+						h4.post-classic-title: a( href= "#" ) What To Ask Your Engraving Company
+
+				.col-sm-6.col-lg-4.wow-outer
+					// Post Classic
+					article.post-classic.wow.slideInLeft( data-wow-delay='.05s' )
+						a.post-classic-media( href= "#" )
+							+img( 'sidebar-blog-2-370x264' )
+						ul.post-classic-meta
+							li: a.button-winona( href='#' ) News
+							li: time( datetime='2019' ) Apr 21, 2019 at 12:05 pm
+
+						h4.post-classic-title: a( href= "#" ) Laser Engraving Mistakes We Always Try to Avoid
+
+				.col-sm-6.col-lg-4.wow-outer
+					// Post Classic
+					article.post-classic.wow.slideInLeft( data-wow-delay='.1s' )
+						a.post-classic-media( href= "#" )
+							+img( 'sidebar-blog-3-370x264' )
+						ul.post-classic-meta
+							li: a.button-winona( href='#' ) News
+							li: time( datetime='2019' ) Apr 21, 2019 at 12:05 pm
+
+						h4.post-classic-title: a( href= "#" ) How Engraved Signs Help Our Customers
+
+
+	include ../sections/_section-contact-form-and-map
+	// Partners
+	section.section.section-sm.text-center.bg-white
+		.container
+			// Owl Carousel
+			.owl-carousel.owl-carousel-1(
+			data-items='2',
+			data-sm-items='3',
+			data-md-items='4',
+			data-lg-items='5',
+			data-dots='true',
+			data-nav='false',
+			data-stage-padding='0',
+			data-loop='true',
+			data-margin='30',
+			data-mouse-drag='false' )
+				.item.wow-outer: .wow.slideInLeft
+					a.link-image( href='#' )
+						+img( 'logo-john-brad-135x87.png' )
+				.item.wow-outer: .wow.slideInLeft( data-wow-delay='.05s' )
+					a.link-image( href='#' )
+						+img( 'logo-the-oldbrand-134x104.png' )
+				.item.wow-outer: .wow.slideInLeft( data-wow-delay='.1s' )
+					a.link-image( href='#' )
+						+img( 'logo-havana-cabana-132x87.png' )
+				.item.wow-outer: .wow.slideInLeft( data-wow-delay='.15s' )
+					a.link-image( href='#' )
+						+img( 'logo-brownie-143x85.png' )
+				.item.wow-outer: .wow.slideInLeft( data-wow-delay='.2s' )
+					a.link-image( href='#' )
+						+img( 'logo-hillplan-111x85.png' )
+	// Page Footer
+	include ../sections/_footer-standard
+	+footer-standard({
+		about: 'ArtPlace is America’s leading engraving studio with over 20 professionals who know how to handle almost any material. Whether you need a dog tag, an engraved portrait, or a custom-designed product, our team will be more than happy to handle your requests.'
+	})

@@ -1,0 +1,102 @@
+/*
+*
+* Text styling
+*/
+
+// Text styles
+.text-italic {
+	font-style: italic;
+}
+
+.text-normal {
+	font-style: normal;
+}
+
+// Text decoration
+.text-underline {
+	text-decoration: underline;
+}
+
+.text-strike {
+	text-decoration: line-through;
+}
+
+// Text weight
+.font-weight-thin {
+	font-weight: 100;
+}
+
+.font-weight-light {
+	font-weight: 300;
+}
+
+.font-weight-regular {
+	font-weight: 400;
+}
+
+.font-weight-medium {
+	font-weight: 500;
+}
+
+.font-weight-sbold {
+	font-weight: 600;
+}
+
+.font-weight-ubold {
+	font-weight: 900;
+}
+
+// Text spacing
+.text-spacing-0 {
+	letter-spacing: 0;
+}
+
+
+@include media-breakpoint-up(sm) {
+	.text-width-1 {
+		max-width: 240px;
+	}
+}
+
+
+.decor{
+	position: relative;
+	&:before{
+		content: '';
+		position: absolute;
+		width: 40px;
+		height: 40px;
+		@include media-breakpoint-up(md) {
+			width: 70px;
+			height: 70px;
+		}
+		@include media-breakpoint-up(lg) {
+			width: 115px;
+			height: 115px;
+		}
+		display: block;
+		background-color: rgba($color-4, 0.07);
+		top: 54%;
+		@include media-breakpoint-up(xl) {
+			top: 58%;
+		}
+		transform: translate(-50%,-50%);
+	}
+	&__centered{
+		&:before{
+			left: 50%;
+		}
+	}
+	&__right{
+		&:before{
+			right: 0;
+			transform: translate(0%,-50%);
+		}
+	}
+}
+
+
+.text-primary{
+	color: $primary !important;
+
+}
