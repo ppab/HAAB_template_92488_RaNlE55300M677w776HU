@@ -31197,7 +31197,7 @@ html.boxed body {
   width: 40px;
   height: 40px;
   display: block;
-  background-color: rgba(184, 157, 79, 0.07);
+  background-color: rgba(184, 157, 79, 0.00);
   top: 54%;
   transform: translate(-50%, -50%);
 }
