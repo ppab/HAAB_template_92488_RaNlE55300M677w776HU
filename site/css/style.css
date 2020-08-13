@@ -24236,21 +24236,6 @@ a[href*="mailto"] {
   cursor: default;
 }
 
-.box-creative:hover .box-creative-icon {
-  color: #fff;
-}
-
-.box-creative:hover .box-creative-icon {
-  border: solid 2px #d73632;
-  transition: 0.3s;
-}
-
-.box-creative:hover .box-creative-icon::after {
-  opacity: 1;
-  visibility: visible;
-  transform: translate3d(0, 0, 0);
-}
-
 .box-creative-shadow .box-creative-icon {
   background: #fff;
   border: 0;
@@ -24265,10 +24250,10 @@ a[href*="mailto"] {
   justify-content: center;
   width: 60px;
   height: 60px;
-  border: 2px solid #e8e9ee;
+ 
   font-size: 24px;
   line-height: 1;
-  color: #d73632;
+ 
 }
 
 .box-creative-icon::before {
