@@ -42108,3 +42108,20 @@ html:not(.ie-11):not(.ios) .parallax-disabled {
 	fill: #ffb71b;
 	fill-rule: evenodd;
   }
+  
+  @media only screen and (min-width: 992px) {
+
+
+    .laser-fix{
+      margin-top: 2.5rem;
+    }
+
+  }
+
+  @media only screen and (max-width: 650px) {
+  .fix-mobile-tecnicas-width{
+ 
+ max-width: 361px;
+ margin:auto;
+  }
+  }
