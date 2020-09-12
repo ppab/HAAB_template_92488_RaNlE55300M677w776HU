@@ -42118,10 +42118,10 @@ html:not(.ie-11):not(.ios) .parallax-disabled {
 
   }
 
-  @media only screen and (max-width: 650px) {
+  @media only screen and (max-width: 700px) {
   .fix-mobile-tecnicas-width{
  
- max-width: 361px;
+ max-width: 80vw;
  margin:auto;
   }
   }
